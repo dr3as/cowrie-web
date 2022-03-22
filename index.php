@@ -24,8 +24,10 @@
     -->
     <a href="index.php?url=sessions">Sessions</a><br>
     <a href="index.php?url=downloads">Downloads</a><br>
+    <!-- not interesting for me
     <a href="index.php?url=keyfingerprints">Keyfingerprints</a><br>
     <a href="index.php?url=params">Params</a><br>
+    -->
     </td>
     <td class="tg-0lax">
     <?php
