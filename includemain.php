@@ -1,5 +1,6 @@
 <?php
-$link = mysqli_connect("localhost", "cowrie", "#######", "cowrie");
+require "config.php";
+$link = mysqli_connect($mysql_host, $mysql_user, $mysql_pw, $mysql_db);
 if($_GET['url'] == "auth"){
 // Check connection
 if($link === false){
