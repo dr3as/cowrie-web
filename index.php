@@ -9,7 +9,7 @@
 </style>
 </head>
 <body>
-Cowrie Logs
+<h1>Cowrie Logs</h1>
 <table class="tg">
 <thead>
   <tr>
