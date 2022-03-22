@@ -1,6 +1,9 @@
 <?php
+//import login for db
 require "config.php";
+//Create var for connecting to DB
 $link = mysqli_connect($mysql_host, $mysql_user, $mysql_pw, $mysql_db);
+//if url var is set to auth
 if($_GET['url'] == "auth"){
 // Check connection
 if($link === false){

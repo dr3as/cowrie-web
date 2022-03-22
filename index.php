@@ -16,10 +16,12 @@
     <td class="tg-0lax">
     <br>
     <a href="index.php">Home</a><br>
-    <a href="index.php?url=auth">Auth</a><br>
+    <a href="index.php?url=auth">Logins</a><br>
     <a href="index.php?url=clients">Clients</a><br>
-    <a href="index.php?url=input">Input</a><br>
-    <!--<a href="index.php?url=sensors">Sensors</a><br>-->
+    <a href="index.php?url=input">Commands</a><br>
+    <!-- commented it out since i only have one sensor 
+    <a href="index.php?url=sensors">Sensors</a><br>
+    -->
     <a href="index.php?url=sessions">Sessions</a><br>
     <a href="index.php?url=downloads">Downloads</a><br>
     <a href="index.php?url=keyfingerprints">Keyfingerprints</a><br>
