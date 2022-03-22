@@ -409,6 +409,6 @@ mysqli_close($link);
 }
 
 else{
-echo "Please set $url var";
+echo "Use the menu on the left to navigate between different statistics/info";
 }
 ?>
