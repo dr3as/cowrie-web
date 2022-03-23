@@ -29,7 +29,7 @@ if($result_auth = mysqli_query($link, $sql_auth)){
                 echo "<td>" . $row_auth['timestamp'] . "</td>";
             echo "</tr>";
         }
-        echo "</table></td><td>";
+        echo "</table></td><td style=\"border-style:none;\">";
         // Free result set
         mysqli_free_result($result_auth);
     } else{
@@ -62,7 +62,7 @@ if($result_auth_username_count = mysqli_query($link, $sql_auth_username_count)){
                 #echo "<td>" . $row_auth['timestamp'] . "</td>";
             echo "</tr>";
         }
-        echo "</table></td><td>";
+        echo "</table></td><td style=\"border-style:none;\">";
         // Free result set
         mysqli_free_result($result_auth_username_count);
     } else{
@@ -96,7 +96,7 @@ if($result_auth_password_count = mysqli_query($link, $sql_auth_password_count)){
                 #echo "<td>" . $row_auth['timestamp'] . "</td>";
             echo "</tr>";
         }
-        echo "</table></td></tr></thead></table>";
+        echo "</table></td><td style=\"border-style:none;\">";
         // Free result set
         mysqli_free_result($result_auth_password_count);
     } else{
@@ -130,7 +130,7 @@ if($result_auth_username_password_count = mysqli_query($link, $sql_auth_username
                 #echo "<td>" . $row_auth['timestamp'] . "</td>";
             echo "</tr>";
         }
-        echo "</table>";
+        echo "</table></td></tr></thead></table>";
         // Free result set
         mysqli_free_result($result_auth_username_password_count);
     } else{
