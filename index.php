@@ -3,6 +3,7 @@
 <title>Cowrie Logs</title>
 <style type="text/css">
 <?php
+require "config.php";
 if ($dark_mode == "on") {
 echo "body {background-color: black; color: lightgrey;}";
 }
