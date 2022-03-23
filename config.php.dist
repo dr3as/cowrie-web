@@ -1,6 +1,9 @@
 <?php
+//config for mysql
 $mysql_host = "";
 $mysql_user = "";
 $mysql_pw = "";
 $mysql_db = "";
+//Other config
+$dark_mode = "on";
 ?>
