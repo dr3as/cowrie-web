@@ -14,85 +14,8 @@ elseif($_GET['url'] == "clients"){
 elseif($_GET['url'] == "input"){
     require "reqs/input.php";
 }
-elseif($_GET['url'] == "sensors"){
-
-// Check connection
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
-
-// Attempt select query execution
-$sql_sensors = "SELECT * FROM sensors";
-if($result_sensors = mysqli_query($link, $sql_sensors)){
-    if(mysqli_num_rows($result_sensors) > 0){
-        echo "<table>";
-            echo "<tr>";
-                #echo "<th>id</th>";
-                echo "<th>ip</th>";
-            echo "</tr>";
-        while($row_sensors = mysqli_fetch_array($result_sensors)){
-            echo "<tr>";
-                #echo "<td>" . $row_sensors['id'] . "</td>";
-                echo "<td>" . $row_sensors['ip'] . "</td>";
-            echo "</tr>";
-        }
-        echo "</table>";
-        // Free result set
-        mysqli_free_result($result_sensors);
-    } else{
-        echo "No records matching your query were found.";
-    }
-} else{
-    echo "ERROR: Could not able to execute $sql_sensors. " . mysqli_error($link);
-}
-
-// Close connection
-mysqli_close($link);
-}
 elseif($_GET['url'] == "sessions"){
-
-// Check connection
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
-
-// Attempt select query execution
-$sql_sessions = "SELECT * FROM sessions";
-if($result_sessions = mysqli_query($link, $sql_sessions)){
-    if(mysqli_num_rows($result_sessions) > 0){
-        echo "<table>";
-            echo "<tr>";
-                #echo "<th>id</th>";
-                echo "<th>Starttime</th>";
-                echo "<th>Endtime</th>";
-                #echo "<th>Sensor</th>";
-                echo "<th>ip</th>";
-                echo "<th>termsize</th>";
-                echo "<th>client</th>";
-            echo "</tr>";
-        while($row_sessions = mysqli_fetch_array($result_sessions)){
-            echo "<tr>";
-                #echo "<td>" . $row_sessions['id'] . "</td>";
-                echo "<td>" . $row_sessions['starttime'] . "</td>";
-                echo "<td>" . $row_sessions['endtime'] . "</td>";
-                #echo "<td>" . $row_sessions['sensor'] . "</td>";
-                echo "<td>" . $row_sessions['ip'] . "</td>";
-                echo "<td>" . $row_sessions['termsize'] . "</td>";
-                echo "<td>" . $row_sessions['client'] . "</td>";
-            echo "</tr>";
-        }
-        echo "</table>";
-        // Free result set
-        mysqli_free_result($result_sessions);
-    } else{
-        echo "No records matching your query were found.";
-    }
-} else{
-    echo "ERROR: Could not able to execute $sql_sessions. " . mysqli_error($link);
-}
-
-// Close connection
-mysqli_close($link);
+    require "reqs/sessions.php";
 }
 elseif($_GET['url'] == "downloads"){
 
