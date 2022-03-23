@@ -6,7 +6,7 @@ if($link === false){
 echo "<h2>Downloads</h2><h3>Distinct Downloads</h3>";
 // Attempt select query execution
 //$sql_downloads = "SELECT DISTINCT url, shasum FROM downloads";
-$sql_downloads = "SELECT url, shasum FROM downloads WHERE shasum != \"NULL\" GROUP BY shasum";
+$sql_downloads = "SELECT url, shasum FROM downloads WHERE shasum != \"NULL\"";
 if($result_downloads = mysqli_query($link, $sql_downloads)){
     if(mysqli_num_rows($result_downloads) > 0){
         echo "<table>";
