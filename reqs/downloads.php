@@ -11,10 +11,10 @@ if($result_downloads = mysqli_query($link, $sql_downloads)){
         echo "<table>";
             echo "<tr>";
                 #echo "<th>id</th>";
-                echo "<th>Session</th>";
-                echo "<th>Timestamp</th>";
+                #echo "<th>Session</th>";
+                #echo "<th>Timestamp</th>";
                 echo "<th>url</th>";
-                echo "<th>outfile</th>";
+                #echo "<th>outfile</th>";
                 echo "<th>shasum</th>";
             echo "</tr>";
         while($row_downloads = mysqli_fetch_array($result_downloads)){
