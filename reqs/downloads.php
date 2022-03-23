@@ -5,7 +5,7 @@ if($link === false){
 }
 
 // Attempt select query execution
-$sql_downloads = "SELECT DISTINCT url, shasum FROM downloads";
+$sql_downloads = "SELECT DISTINCT url, shasum FROM downloads WHERE shasum is not NULL";
 if($result_downloads = mysqli_query($link, $sql_downloads)){
     if(mysqli_num_rows($result_downloads) > 0){
         echo "<table>";
