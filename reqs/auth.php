@@ -5,12 +5,12 @@ if($link === false){
 }
 
 // Attempt select query execution
-$sql_auth = "SELECT * FROM auth ORDER BY timestamp DESC LIMIT 100";
+$sql_auth = "SELECT * FROM auth ORDER BY timestamp DESC LIMIT 25";
 if($result_auth = mysqli_query($link, $sql_auth)){
     if(mysqli_num_rows($result_auth) > 0){
-        echo "<h2>Logins</h2>";
-        echo "<h3>Last 100 Logins</h3>";
         echo "<table>";
+        echo "<h2>Logins</h2>";
+        echo "<h3>Last 25 Logins</h3>";
             echo "<tr>";
                 #echo "<th>id</th>";
                 echo "<th>Session</th>";
