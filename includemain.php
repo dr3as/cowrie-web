@@ -45,37 +45,37 @@ if($result_auth = mysqli_query($link, $sql_auth)){
     echo "ERROR: Could not able to execute $sql_auth. " . mysqli_error($link);
 }
 
-$sql_auth = "SELECT username, count(*) FROM auth GROUP BY username";
-if($result_auth = mysqli_query($link, $sql_auth)){
-    if(mysqli_num_rows($result_auth) > 0){
+$sql_auth_username_count = "SELECT username, count(*) FROM auth GROUP BY username";
+if($result_auth_username_count = mysqli_query($link, $sql_auth_username_count)){
+    if(mysqli_num_rows($result_auth_username_count) > 0){
         echo "<h3>Usernames</h3>";
         echo "<table>";
             echo "<tr>";
                 #echo "<th>id</th>";
                 #echo "<th>Session</th>";
                 #echo "<th>Success</th>";
-                echo "<th>" . $row_auth['username'] . " :</th>";
-                #echo "<th>password</th>";
+                echo "<th>UserName</th>";
+                echo "<th>Count</th>";
                 #echo "<th>timestamp</th>";
             echo "</tr>";
-        while($row_auth = mysqli_fetch_array($result_auth)){
+        while($row_auth_username_count = mysqli_fetch_array($result_auth_username_count)){
             echo "<tr>";
                 #echo "<td>" . $row_auth['id'] . "</td>";
                 #echo "<td>" . $row_auth['session'] . "</td>";
                 #echo "<td>" . $row_auth['success'] . "</td>";
-                echo "<td>" . $row_auth['count'] . "</td>";
-                #echo "<td>" . $row_auth['password'] . "</td>";
+                echo "<td>" . $row_auth_username_count['username'] . "</td>";
+                echo "<td>" . $row_auth_username_count['count'] . "</td>";
                 #echo "<td>" . $row_auth['timestamp'] . "</td>";
             echo "</tr>";
         }
         echo "</table>";
         // Free result set
-        mysqli_free_result($result_auth);
+        mysqli_free_result($result_auth_username_count);
     } else{
         echo "No records matching your query were found.";
     }
 } else{
-    echo "ERROR: Could not able to execute $sql_auth. " . mysqli_error($link);
+    echo "ERROR: Could not able to execute $sql_auth_username_count. " . mysqli_error($link);
 }
 
 // Close connection
