@@ -5,7 +5,7 @@ if($link === false){
 }
 
 // Attempt select query execution
-$sql_input = "SELECT * FROM input";
+$sql_input = "SELECT * FROM input LIMIT 25";
 if($result_input = mysqli_query($link, $sql_input)){
     if(mysqli_num_rows($result_input) > 0){
         echo "<table>";

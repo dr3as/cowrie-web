@@ -5,7 +5,7 @@ if($link === false){
 }
 
 // Attempt select query execution
-$sql_sessions = "SELECT * FROM sessions";
+$sql_sessions = "SELECT * FROM sessions LIMIT 25";
 if($result_sessions = mysqli_query($link, $sql_sessions)){
     if(mysqli_num_rows($result_sessions) > 0){
         echo "<table>";
