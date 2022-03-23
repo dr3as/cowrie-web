@@ -128,7 +128,7 @@ if($result_auth_password_count = mysqli_query($link, $sql_auth_password_count)){
             echo "<tr>";
                 #echo "<td>" . $row_auth['id'] . "</td>";
                 #echo "<td>" . $row_auth['session'] . "</td>";
-                echo "<td>" . $row_auth['username'] . "</td>";
+                echo "<td>" . $row_auth_password_count['username'] . "</td>";
                 echo "<td>" . $row_auth_password_count['password'] . "</td>";
                 echo "<td>" . $row_auth_password_count['password_count'] . "</td>";
                 #echo "<td>" . $row_auth['timestamp'] . "</td>";
