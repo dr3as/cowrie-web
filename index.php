@@ -9,7 +9,7 @@
 </style>
 </head>
 <body>
-<h1>Cowrie Logs</h1>
+<h1>Cowrie Web</h1>
 <table class="tg">
 <thead>
   <tr>
@@ -19,15 +19,8 @@
     <a href="index.php?url=auth">Logins</a><br>
     <a href="index.php?url=clients">Clients</a><br>
     <a href="index.php?url=input">Commands</a><br>
-    <!-- commented it out since i only have one sensor 
-    <a href="index.php?url=sensors">Sensors</a><br>
-    -->
     <a href="index.php?url=sessions">Sessions</a><br>
     <a href="index.php?url=downloads">Downloads</a><br>
-    <!-- not interesting for me
-    <a href="index.php?url=keyfingerprints">Keyfingerprints</a><br>
-    <a href="index.php?url=params">Params</a><br>
-    -->
     </td>
     <td class="tg-0lax">
     <?php
