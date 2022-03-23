@@ -29,7 +29,7 @@ if($result_auth = mysqli_query($link, $sql_auth)){
                 echo "<td>" . $row_auth['timestamp'] . "</td>";
             echo "</tr>";
         }
-        echo "</table>";
+        
         // Free result set
         mysqli_free_result($result_auth);
     } else{
@@ -62,7 +62,7 @@ if($result_auth_username_count = mysqli_query($link, $sql_auth_username_count)){
                 #echo "<td>" . $row_auth['timestamp'] . "</td>";
             echo "</tr>";
         }
-        echo "</table>";
+        
         // Free result set
         mysqli_free_result($result_auth_username_count);
     } else{
@@ -76,7 +76,7 @@ $sql_auth_password_count = "SELECT password, count(*) as password_count FROM aut
 if($result_auth_password_count = mysqli_query($link, $sql_auth_password_count)){
     if(mysqli_num_rows($result_auth_password_count) > 0){
         echo "<h3>Top 25 Passwords</h3>";
-        echo "<table>";
+        
             echo "<tr>";
                 #echo "<th>id</th>";
                 #echo "<th>Session</th>";
@@ -95,7 +95,7 @@ if($result_auth_password_count = mysqli_query($link, $sql_auth_password_count)){
                 #echo "<td>" . $row_auth['timestamp'] . "</td>";
             echo "</tr>";
         }
-        echo "</table>";
+        
         // Free result set
         mysqli_free_result($result_auth_password_count);
     } else{
@@ -109,7 +109,7 @@ $sql_auth_username_password_count = "SELECT username, password, count(*) as user
 if($result_auth_username_password_count = mysqli_query($link, $sql_auth_username_password_count)){
     if(mysqli_num_rows($result_auth_username_password_count) > 0){
         echo "<h3>Top 25 Combinations</h3>";
-        echo "<table>";
+        
             echo "<tr>";
                 #echo "<th>id</th>";
                 #echo "<th>Session</th>";
