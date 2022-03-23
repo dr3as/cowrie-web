@@ -54,7 +54,7 @@ if($result_auth = mysqli_query($link, $sql_auth)){
                 #echo "<th>id</th>";
                 #echo "<th>Session</th>";
                 #echo "<th>Success</th>";
-                echo "<th>" . $row_auth['username'] . "</th>";
+                echo "<th>" . $row_auth['username'] . " :</th>";
                 #echo "<th>password</th>";
                 #echo "<th>timestamp</th>";
             echo "</tr>";
