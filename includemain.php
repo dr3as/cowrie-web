@@ -45,7 +45,7 @@ if($result_auth = mysqli_query($link, $sql_auth)){
     echo "ERROR: Could not able to execute $sql_auth. " . mysqli_error($link);
 }
 
-$sql_auth = "SELECT username, COUNT(*) as username_count FROM auth GROUP BY username";
+$sql_auth = "SELECT username, COUNT(*) as username_count FROM auth";
 if($result_auth = mysqli_query($link, $sql_auth)){
     if(mysqli_num_rows($result_auth) > 0){
         echo "<h3>Usernames</h3>";
