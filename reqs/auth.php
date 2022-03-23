@@ -3,7 +3,7 @@
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
-
+echo "<table><thead><tr><td>";
 // Attempt select query execution
 $sql_auth = "SELECT * FROM auth ORDER BY timestamp DESC LIMIT 25";
 if($result_auth = mysqli_query($link, $sql_auth)){
@@ -29,7 +29,7 @@ if($result_auth = mysqli_query($link, $sql_auth)){
                 echo "<td>" . $row_auth['timestamp'] . "</td>";
             echo "</tr>";
         }
-        echo "</table>";
+        echo "</table></td><td>";
         // Free result set
         mysqli_free_result($result_auth);
     } else{
@@ -62,7 +62,7 @@ if($result_auth_username_count = mysqli_query($link, $sql_auth_username_count)){
                 #echo "<td>" . $row_auth['timestamp'] . "</td>";
             echo "</tr>";
         }
-        echo "</table>";
+        echo "</table></td><td>";
         // Free result set
         mysqli_free_result($result_auth_username_count);
     } else{
@@ -96,7 +96,7 @@ if($result_auth_password_count = mysqli_query($link, $sql_auth_password_count)){
                 #echo "<td>" . $row_auth['timestamp'] . "</td>";
             echo "</tr>";
         }
-        echo "</table>";
+        echo "</table></td></tr></thead></table>";
         // Free result set
         mysqli_free_result($result_auth_password_count);
     } else{
