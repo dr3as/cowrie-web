@@ -14,6 +14,8 @@ if($link === false){
 $sql_auth = "SELECT * FROM auth";
 if($result_auth = mysqli_query($link, $sql_auth)){
     if(mysqli_num_rows($result_auth) > 0){
+        echo "<h2>Logins</h2>";
+        echo "<h3>Last 100 Logins</h3>";
         echo "<table>";
             echo "<tr>";
                 #echo "<th>id</th>";
