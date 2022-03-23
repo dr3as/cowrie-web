@@ -29,7 +29,7 @@ if($result_auth = mysqli_query($link, $sql_auth)){
                 echo "<td>" . $row_auth['timestamp'] . "</td>";
             echo "</tr>";
         }
-        
+        echo "</table>";
         // Free result set
         mysqli_free_result($result_auth);
     } else{
@@ -42,9 +42,9 @@ if($result_auth = mysqli_query($link, $sql_auth)){
 $sql_auth_username_count = "SELECT username, count(*) as username_count FROM auth GROUP BY username ORDER BY username_count DESC LIMIT 25";
 if($result_auth_username_count = mysqli_query($link, $sql_auth_username_count)){
     if(mysqli_num_rows($result_auth_username_count) > 0){
-        echo "<h3>Top 25 Usernames</h3>";
         echo "<table>";
-            echo "<tr>";
+            echo "<h3>Top 25 Usernames</h3>";
+                echo "<tr>";
                 #echo "<th>id</th>";
                 #echo "<th>Session</th>";
                 #echo "<th>Success</th>";
@@ -62,7 +62,7 @@ if($result_auth_username_count = mysqli_query($link, $sql_auth_username_count)){
                 #echo "<td>" . $row_auth['timestamp'] . "</td>";
             echo "</tr>";
         }
-        
+        echo "</table>";
         // Free result set
         mysqli_free_result($result_auth_username_count);
     } else{
@@ -75,6 +75,7 @@ if($result_auth_username_count = mysqli_query($link, $sql_auth_username_count)){
 $sql_auth_password_count = "SELECT password, count(*) as password_count FROM auth GROUP BY password ORDER BY password_count DESC LIMIT 25";
 if($result_auth_password_count = mysqli_query($link, $sql_auth_password_count)){
     if(mysqli_num_rows($result_auth_password_count) > 0){
+        echo "<table>";
         echo "<h3>Top 25 Passwords</h3>";
         
             echo "<tr>";
@@ -95,7 +96,7 @@ if($result_auth_password_count = mysqli_query($link, $sql_auth_password_count)){
                 #echo "<td>" . $row_auth['timestamp'] . "</td>";
             echo "</tr>";
         }
-        
+        echo "</table>";
         // Free result set
         mysqli_free_result($result_auth_password_count);
     } else{
@@ -108,6 +109,7 @@ if($result_auth_password_count = mysqli_query($link, $sql_auth_password_count)){
 $sql_auth_username_password_count = "SELECT username, password, count(*) as username_password_count FROM auth GROUP BY username, password ORDER BY username_password_count DESC LIMIT 25";
 if($result_auth_username_password_count = mysqli_query($link, $sql_auth_username_password_count)){
     if(mysqli_num_rows($result_auth_username_password_count) > 0){
+        echo "<table>";
         echo "<h3>Top 25 Combinations</h3>";
         
             echo "<tr>";
