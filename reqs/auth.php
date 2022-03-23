@@ -3,14 +3,14 @@
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
+echo "<h2>Logins</h2>";
 echo "<table><thead><tr><td>";
 // Attempt select query execution
 $sql_auth = "SELECT * FROM auth ORDER BY timestamp DESC LIMIT 25";
 if($result_auth = mysqli_query($link, $sql_auth)){
     if(mysqli_num_rows($result_auth) > 0){
         echo "<table>";
-        echo "<h2>Logins</h2>";
-        echo "<h3>Last 25 Logins</h3>";
+                echo "<h3>Last 25 Logins</h3>";
             echo "<tr>";
                 #echo "<th>id</th>";
                 echo "<th>Session</th>";
