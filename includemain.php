@@ -5,85 +5,14 @@ require "config.php";
 $link = mysqli_connect($mysql_host, $mysql_user, $mysql_pw, $mysql_db);
 //if url var is set to auth use the auth file
 if($_GET['url'] == "auth"){
-require "reqs/auth.php";
+    require "reqs/auth.php";
 }
+//if url var is set to clients use the client file
 elseif($_GET['url'] == "clients"){
-
-// Check connection
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
-
-// Attempt select query execution
-$sql_clients = "SELECT * FROM clients";
-if($result_clients = mysqli_query($link, $sql_clients)){
-    if(mysqli_num_rows($result_clients) > 0){
-        echo "<table>";
-            echo "<tr>";
-                #echo "<th>id</th>";
-                echo "<th>Version</th>";
-            echo "</tr>";
-        while($row_clients = mysqli_fetch_array($result_clients)){
-            echo "<tr>";
-                #echo "<td>" . $row_clients['id'] . "</td>";
-                echo "<td>" . $row_clients['version'] . "</td>";
-            echo "</tr>";
-        }
-        echo "</table>";
-        // Free result set
-        mysqli_free_result($result_clients);
-    } else{
-        echo "No records matching your query were found.";
-    }
-} else{
-    echo "ERROR: Could not able to execute $sql_clients. " . mysqli_error($link);
-}
-
-// Close connection
-mysqli_close($link);
+    require "reqs/clients.php";
 }
 elseif($_GET['url'] == "input"){
-
-// Check connection
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
-
-// Attempt select query execution
-$sql_input = "SELECT * FROM input";
-if($result_input = mysqli_query($link, $sql_input)){
-    if(mysqli_num_rows($result_input) > 0){
-        echo "<table>";
-            echo "<tr>";
-                #echo "<th>id</th>";
-                echo "<th>session</th>";
-                echo "<th>timestamp</th>";
-                #echo "<th>realm</th>";
-                echo "<th>success</th>";
-                echo "<th>input</th>";
-            echo "</tr>";
-        while($row_input = mysqli_fetch_array($result_input)){
-            echo "<tr>";
-                #echo "<td>" . $row_input['id'] . "</td>";
-                echo "<td>" . $row_input['session'] . "</td>";
-                echo "<td>" . $row_input['timestamp'] . "</td>";
-                #echo "<td>" . $row_input['realm'] . "</td>";
-                echo "<td>" . $row_input['success'] . "</td>";
-                echo "<td>" . $row_input['input'] . "</td>";
-            echo "</tr>";
-        }
-        echo "</table>";
-        // Free result set
-        mysqli_free_result($result_input);
-    } else{
-        echo "No records matching your query were found.";
-    }
-} else{
-    echo "ERROR: Could not able to execute $sql_input. " . mysqli_error($link);
-}
-
-// Close connection
-mysqli_close($link);
+    require "reqs/input.php";
 }
 elseif($_GET['url'] == "sensors"){
 
