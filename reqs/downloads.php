@@ -3,7 +3,7 @@
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
-echo "<h2>Downloads</h2><br><h3>Distinct Downloads</h3>";
+echo "<h2>Downloads</h2><h3>Distinct Downloads</h3>";
 // Attempt select query execution
 //$sql_downloads = "SELECT DISTINCT url, shasum FROM downloads";
 $sql_downloads = "SELECT DISTINCT url, shasum FROM downloads WHERE shasum != \"NULL\"";
