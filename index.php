@@ -5,7 +5,7 @@
 <?php
 require "config.php";
 if ($dark_mode == "on") {
-echo "body {background-color: black; color: lightgrey;}";
+echo "body {background-color: black; color: lightgrey;} a:link{color: lightblue;} a:visited{color: lightblue;} a:hover{color: lightgrey;} a:active{color: lightgrey;}";
 }
 ?>
 .tg  {border-collapse:collapse;border-spacing:0;}
