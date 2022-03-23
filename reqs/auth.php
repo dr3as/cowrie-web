@@ -4,7 +4,7 @@ if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 echo "<h2>Logins</h2>";
-echo "<table><thead><tr><td>";
+echo "<table><thead><tr style="border-style:none;"><td>";
 // Attempt select query execution
 $sql_auth = "SELECT * FROM auth ORDER BY timestamp DESC LIMIT 25";
 if($result_auth = mysqli_query($link, $sql_auth)){
