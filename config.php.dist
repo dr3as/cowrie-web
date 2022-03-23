@@ -5,5 +5,5 @@ $mysql_user = "";
 $mysql_pw = "";
 $mysql_db = "";
 //Other config
-$dark_mode = "on";
+$dark_mode = "";
 ?>
