@@ -4,7 +4,7 @@ if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 echo "<h2>Download</h2><br>";
-echo $_GET['sashum']
+echo $_GET['shasum'];
 // Attempt select query execution
 $sql_downloads = "SELECT DISTINCT url, shasum FROM downloads WHERE shasum != \"NULL\"";
 if($result_downloads = mysqli_query($link, $sql_downloads)){
