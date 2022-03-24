@@ -8,7 +8,7 @@ echo "<h2>Download</h2><br>";
 echo $_GET['download'];
 // Attempt select query execution
 
-$sql_downloads = "SELECT * FROM downloads WHERE shasum = $_GET['url']";
+$sql_downloads = "SELECT * FROM downloads WHERE shasum = \"$_GET['url']\"";
 if($result_downloads = mysqli_query($link, $sql_downloads)){
     if(mysqli_num_rows($result_downloads) > 0){
         echo "<table>";
