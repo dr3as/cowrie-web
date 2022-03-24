@@ -28,15 +28,17 @@ if($result_download_number = mysqli_query($link, $sql_download_number)){
     echo "ERROR: Could not able to execute $sql_download_number. " . mysqli_error($link);
 }
 echo "<br><a href=\"https://www.virustotal.com/gui/file/". $shasum ."\">Link to VirusTotal</a>";
-
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
 $sql_download_name = "SELECT url FROM downloads where shasum = \"$shasum\"";
 if($result_download_name = mysqli_query($link, $sql_download_name)){
     if(mysqli_num_rows($result_download_name) > 0){
-        echo "URL and filename";
+        echo "<br>URL and filename";
         while($row_download_name = mysqli_fetch_array($result_download_name)){
             echo $row_download_name['url'];
         }
-        
+
          // Free result set
         mysqli_free_result($result_download_name);
     } else{
