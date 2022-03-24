@@ -37,7 +37,12 @@ if($result_download_name = mysqli_query($link, $sql_download_name)){
     if(mysqli_num_rows($result_download_name) > 0){
         echo "<br>URL and filename<br>";
         while($row_download_name = mysqli_fetch_array($result_download_name)){
+            if($row_download_name['url'] = ""){
+            echo "Unknown";
+            }
+            else{
             echo $row_download_name['url'];
+            }
             echo " - ";
             echo $row_download_name['shasum'];
             echo "<br>";
