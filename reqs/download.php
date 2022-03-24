@@ -1,4 +1,4 @@
-<?php
+test<?php
 
 // Check connection
 if($link === false){
