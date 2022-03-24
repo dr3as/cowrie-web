@@ -32,13 +32,13 @@ echo "<br><a href=\"https://www.virustotal.com/gui/file/". $shasum ."\">Link to 
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
-$sql_download_name = "SELECT url, shasum FROM downloads WHERE shasum = \"$shasum\"";
+$sql_download_name = "SELECT url as dl_url FROM downloads WHERE shasum = \"$shasum\"";
 if($result_download_name = mysqli_query($link, $sql_download_name)){
     if(mysqli_num_rows($result_download_name) > 0){
         echo "<br>URL and filename";
         while($row_download_name = mysqli_fetch_array($result_download_name)){
-            echo "test";
-            echo $row_download_name['shasum'];
+            echo $row_download_name['dl_url'];
+            echo "<br>";
         }
 
          // Free result set
