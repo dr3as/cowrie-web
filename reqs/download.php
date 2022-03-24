@@ -1,14 +1,12 @@
-test<?php
-
+<?php
 // Check connection
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 echo "<h2>Download</h2><br>";
-echo $_GET['download'];
+echo $_GET['sashum']
 // Attempt select query execution
-
-$sql_downloads = "SELECT * FROM downloads WHERE shasum = \"$_GET['url']\"";
+$sql_downloads = "SELECT DISTINCT url, shasum FROM downloads WHERE shasum != \"NULL\"";
 if($result_downloads = mysqli_query($link, $sql_downloads)){
     if(mysqli_num_rows($result_downloads) > 0){
         echo "<table>";
@@ -33,6 +31,4 @@ if($result_downloads = mysqli_query($link, $sql_downloads)){
 }
 // Close connection
 mysqli_close($link);
-
-
 ?>

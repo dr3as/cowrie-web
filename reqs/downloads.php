@@ -16,7 +16,7 @@ if($result_downloads = mysqli_query($link, $sql_downloads)){
         while($row_downloads = mysqli_fetch_array($result_downloads)){
             echo "<tr>";
                 echo "<td>" . $row_downloads['url'] . "</td>";
-                echo "<td><a href=\"index.php?url=download&download=". $row_downloads['shasum'] ."\">" . $row_downloads['shasum'] . "</a></td>";
+                echo "<td><a href=\"index.php?url=download&shasum=". $row_downloads['shasum'] ."\">" . $row_downloads['shasum'] . "</a></td>";
             echo "</tr>";
         }
         echo "</table>";
