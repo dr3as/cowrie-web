@@ -38,7 +38,7 @@ if($result_download_name = mysqli_query($link, $sql_download_name)){
         echo "<br>URL and filename";
         while($row_download_name = mysqli_fetch_array($result_download_name)){
             echo "test";
-            echo $row_download_name['url'];
+            echo $row_download_name['shasum'];
         }
 
          // Free result set
