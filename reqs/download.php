@@ -27,6 +27,7 @@ if($result_download_number = mysqli_query($link, $sql_download_number)){
 } else{
     echo "ERROR: Could not able to execute $sql_download_number. " . mysqli_error($link);
 }
+echo "<a href=\"https://www.virustotal.com/gui/file/"$shasum">Link to VirusTotal</a>";
 // Close connection
 mysqli_close($link);
 ?>
