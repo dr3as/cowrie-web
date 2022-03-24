@@ -3,6 +3,8 @@
 <title>Cowrie Logs</title>
 <style type="text/css">
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 require "config.php";
 if ($dark_mode == "on") {
 echo "body {background-color: black; color: lightgrey;} a:link{color: DeepSkyBlue;} a:visited{color: DeepSkyBlue;} a:hover{color: lightgrey;} a:active{color: lightgrey;}";
