@@ -32,11 +32,11 @@ echo "<br><a href=\"https://www.virustotal.com/gui/file/". $shasum ."\">Link to 
 $sql_download_name = "SELECT url FROM downloads where shasum = \"$shasum\"";
 if($result_download_name = mysqli_query($link, $sql_download_name)){
     if(mysqli_num_rows($result_download_name) > 0){
-        echo "URL and";
+        echo "URL and filename";
         while($row_download_name = mysqli_fetch_array($result_download_name)){
             echo $row_download_name['url'];
         }
-        echo " times";
+        
          // Free result set
         mysqli_free_result($result_download_name);
     } else{
