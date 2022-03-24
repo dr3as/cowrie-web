@@ -17,10 +17,15 @@ elseif($_GET['url'] == "input"){
 elseif($_GET['url'] == "sessions"){
     require "reqs/sessions.php";
 }
+elseif($_GET['url'] == "session"){
+    require "reqs/session.php";
+}
 elseif($_GET['url'] == "downloads"){
     require "reqs/downloads.php";
 }
-
+elseif($_GET['url'] == "download"){
+    require "reqs/download.php";
+}
 else{
 echo "Use the menu on the left to navigate between different statistics/info";
 }
