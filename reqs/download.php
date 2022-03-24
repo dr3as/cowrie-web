@@ -38,7 +38,7 @@ if($result_download_name = mysqli_query($link, $sql_download_name)){
         }
         echo " times";
          // Free result set
-        mysqli_free_result($result_download_number);
+        mysqli_free_result($result_download_name);
     } else{
         echo "No records matching your query were found.";
     }
