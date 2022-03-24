@@ -38,16 +38,17 @@ if($result_download_name = mysqli_query($link, $sql_download_name)){
         echo "<br>URL and filename<br>";
         while($row_download_name = mysqli_fetch_array($result_download_name)){
             if(isset($row_download_name['url']) && $row_download_name['url'] != ""){
-                #echo $row_download_name['url'];
+                echo $row_download_name['url'];
                 $full_url = $row_download_name['url'];
-                $url = explode('/', $full_url);
+                #$url = explode('/', $full_url);
 
             }
             else{
                 echo "Unknown";
             }
             echo "  -  ";
-            $last = end($full_url);
+            echo $row_download_name['url'];
+            #$last = end($full_url);
             #echo $row_download_name['shasum'];
             echo "<br>";
         }
