@@ -15,6 +15,10 @@ $sql_download_number = "SELECT SUM(id) FROM downloads where shasum = \"$shasum\"
 if($result_download_number = mysqli_query($link, $sql_download_number)){
     if(mysqli_num_rows($result_download_number) > 0){
         echo "This file is downloaded ";
+        while($row = mysql_fetch_array($result_download_number)){
+        $sum = $row['SUM(id)'];
+        }
+        echo $sum;
         echo " times";
          // Free result set
         mysqli_free_result($result_download_number);
