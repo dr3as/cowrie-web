@@ -11,12 +11,12 @@ if($link === false){
 // Attempt select query execution
 #$sql_auth_username_count = "SELECT username, count(*) as username_count FROM auth GROUP BY username ORDER BY username_count DESC LIMIT 25";
 #$row_auth_username_count['username_count']
-$sql_download_number = "SELECT SUM(id) FROM downloads where shasum = \"$shasum\"";
+$sql_download_number = "SELECT id, count(*) as download_number FROM downloads GROUP BY id where shasum = \"$shasum\"";
 if($result_download_number = mysqli_query($link, $sql_download_number)){
     if(mysqli_num_rows($result_download_number) > 0){
         echo "This file is downloaded ";
-        while($row = mysql_fetch_array($result_download_number)){
-        $sum = $row['SUM(id)'];
+        while($row_download_number = mysqli_fetch_array($result_download_number)){
+            echo "<td>" . $row_download_number['download_number'] . "</td>";
         }
         echo $sum;
         echo " times";
