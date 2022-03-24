@@ -1,8 +1,8 @@
 <?php
 echo "<h2>Download</h2>";
-echo "<b>"
+echo "<b>";
 echo $_GET['shasum'];
-echo "</b>"
+echo "</b>";
 // Check connection
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
