@@ -45,7 +45,7 @@ if($result_download_name = mysqli_query($link, $sql_download_name)){
                 echo dirname($full_url);
                 echo "/  -  ";
                 #$full_url = $row_download_name['url'];
-                $url_magic = explode("/", $full_url)
+                $url_magic = explode("/", $full_url);
                 echo end($url_magic); 
 
             }
