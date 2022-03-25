@@ -81,7 +81,7 @@ if($result_download_sessions = mysqli_query($link, $sql_download_sessions)){
         
         echo "<table>";
             echo "<tr>";
-            echo "<th>Sessions how downloaded this file</th>";
+            echo "<th>Session</th>";
             echo "</tr>";
         while($row_download_sessions = mysqli_fetch_array($result_download_sessions)){
             
