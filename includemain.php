@@ -4,26 +4,27 @@ require "config.php";
 //Create var for connecting to DB
 $link = mysqli_connect($mysql_host, $mysql_user, $mysql_pw, $mysql_db);
 //if url var is set to auth use the auth file
-if($_GET['url'] == "auth"){
+$get_url = $_GET['url'];
+if($get_url == "auth"){
     require "reqs/auth.php";
 }
 //if url var is set to clients use the client file
-elseif($_GET['url'] == "clients"){
+elseif($get_url == "clients"){
     require "reqs/clients.php";
 }
-elseif($_GET['url'] == "input"){
+elseif($get_url == "input"){
     require "reqs/input.php";
 }
-elseif($_GET['url'] == "sessions"){
+elseif($get_url == "sessions"){
     require "reqs/sessions.php";
 }
-elseif($_GET['url'] == "session"){
+elseif($get_url == "session"){
     require "reqs/session.php";
 }
-elseif($_GET['url'] == "downloads"){
+elseif($get_url == "downloads"){
     require "reqs/downloads.php";
 }
-elseif($_GET['url'] == "download"){
+elseif($get_url == "download"){
     require "reqs/download.php";
 }
 else{
