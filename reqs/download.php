@@ -35,13 +35,14 @@ if($link === false){
 $sql_download_name = "SELECT DISTINCT url, shasum FROM downloads WHERE shasum = \"$shasum\"";
 if($result_download_name = mysqli_query($link, $sql_download_name)){
     if(mysqli_num_rows($result_download_name) > 0){
+        if(isset($row_download_name['url']) && $row_download_name['url'] != ""){
         echo "<table>";
             echo "<tr>";
                 echo "<th>URL</th>";
                 echo "<th>Filename</th>";
             echo "</tr>";
         while($row_download_name = mysqli_fetch_array($result_download_name)){
-            if(isset($row_download_name['url']) && $row_download_name['url'] != ""){
+           
                 $full_url = $row_download_name['url'];
                 echo "<tr>";
                 echo "<td>";
@@ -56,9 +57,10 @@ if($result_download_name = mysqli_query($link, $sql_download_name)){
                 echo "</tr>";
 
             }
+            
+            } 
             else{
-                echo "Unknown URL and filename";
-            }           
+                echo "<br>Unknown URL and filename";          
         }
 
          // Free result set
