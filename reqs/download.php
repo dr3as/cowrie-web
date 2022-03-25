@@ -45,14 +45,15 @@ if($result_download_name = mysqli_query($link, $sql_download_name)){
 
             }
             else{
-                echo "Unknown";
+                echo "Unknown URL and filename";
             }
-            echo "  -  ";
-            $full_url = $row_download_name['url'];
-            echo $full_url;
-            #$last = end($full_url);
-            #echo $row_download_name['shasum'];
-            echo "<br>";
+            if(isset($row_download_name['url']) && $row_download_name['url'] != ""){
+                echo "  -  ";
+                $full_url = $row_download_name['url'];
+                echo end(explode("/", $full_url)); 
+
+            }
+            
         }
 
          // Free result set
