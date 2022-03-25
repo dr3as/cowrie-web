@@ -72,17 +72,20 @@ if($result_download_name = mysqli_query($link, $sql_download_name)){
 
 }
 echo "</table></td><td style=\"border-style:none;\">";
-if($result_download_name = mysqli_query($link, $sql_download_name)){
-    if(mysqli_num_rows($result_download_name) > 0){
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+$sql_download_sessions = "SELECT DISTINCT url, shasum FROM downloads WHERE shasum = \"$shasum\"";
+if($result_download_sessions = mysqli_query($link, $sql_download_sessions)){
+    if(mysqli_num_rows($result_download_sessions) > 0){
         
         echo "<table>";
             echo "<tr>";
-                echo "<th>URL</th>";
-                echo "<th>Filename</th>";
+            echo "<th>Sessions how downloaded this file.</th>";
             echo "</tr>";
-        while($row_download_name = mysqli_fetch_array($result_download_name)){
-            if(isset($row_download_name['url']) && $row_download_name['url'] != ""){
-                $full_url = $row_download_name['url'];
+        while($row_download_sessions = mysqli_fetch_array($result_download_sessions)){
+            if(isset($row_download_sessions['url']) && $row_download_sessions['url'] != ""){
+                $full_url = $row_download_sessions['url'];
                 echo "<tr>";
                 echo "<td>";
                 #Get only the url and not the filename;
@@ -101,12 +104,12 @@ if($result_download_name = mysqli_query($link, $sql_download_name)){
             
 
          // Free result set
-        mysqli_free_result($result_download_name);
+        mysqli_free_result($result_download_sessions);
     } else{
         echo "No records matching your query were found.";
     }
 } else{
-    echo "ERROR: Could not able to execute $sql_download_name. " . mysqli_error($link);
+    echo "ERROR: Could not able to execute $sql_download_sessions. " . mysqli_error($link);
 
 }
 
