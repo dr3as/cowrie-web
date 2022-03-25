@@ -55,8 +55,7 @@ if($result_download_name = mysqli_query($link, $sql_download_name)){
                 echo "</td>";
                 echo "</tr>";
 
-            }
-            
+                   
             } 
             
 
