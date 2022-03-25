@@ -39,9 +39,10 @@ if($result_download_name = mysqli_query($link, $sql_download_name)){
         while($row_download_name = mysqli_fetch_array($result_download_name)){
             if(isset($row_download_name['url']) && $row_download_name['url'] != ""){
                 $full_url = $row_download_name['url'];
-                echo $full_url;
-                $url = explode('/', $full_url, -1);
-                echo $url[0];
+                #echo $full_url;
+                #$url = explode('/', $full_url, -1);
+                #echo $url[0];
+                echo dirname($full_url);
 
             }
             else{
