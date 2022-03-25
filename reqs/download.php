@@ -75,30 +75,25 @@ echo "</table></td><td style=\"border-style:none;\">";
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
-$sql_download_sessions = "SELECT DISTINCT url, shasum FROM downloads WHERE shasum = \"$shasum\"";
+$sql_download_sessions = "SELECT session FROM downloads WHERE shasum = \"$shasum\"";
 if($result_download_sessions = mysqli_query($link, $sql_download_sessions)){
     if(mysqli_num_rows($result_download_sessions) > 0){
         
         echo "<table>";
             echo "<tr>";
-            echo "<th>Sessions how downloaded this file.</th>";
+            echo "<th>Sessions how downloaded this file</th>";
             echo "</tr>";
         while($row_download_sessions = mysqli_fetch_array($result_download_sessions)){
-            if(isset($row_download_sessions['url']) && $row_download_sessions['url'] != ""){
-                $full_url = $row_download_sessions['url'];
+            
+                
                 echo "<tr>";
                 echo "<td>";
                 #Get only the url and not the filename;
-                echo dirname($full_url);
-                echo "/ </td>";
-                #Get Filename from full url
-                $url_magic = explode("/", $full_url);
-                echo "<td>";
-                echo end($url_magic); 
+                echo $row_download_sessions['url']; 
                 echo "</td>";
                 echo "</tr>";
 
-            }
+            
             
             } 
             
