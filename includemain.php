@@ -4,7 +4,9 @@ require "config.php";
 //Create var for connecting to DB
 $link = mysqli_connect($mysql_host, $mysql_user, $mysql_pw, $mysql_db);
 //if url var is set to auth use the auth file
+if($_GET['url']){
 $get_url = $_GET['url'];
+{
 if($get_url == "auth"){
     require "reqs/auth.php";
 }
