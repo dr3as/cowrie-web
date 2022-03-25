@@ -71,7 +71,7 @@ if($result_download_name = mysqli_query($link, $sql_download_name)){
     echo "ERROR: Could not able to execute $sql_download_name. " . mysqli_error($link);
 
 }
-echo "</td><td style=\"border-style:none;\">test</td></tr></thead></table>";
+echo "</table></td><td style=\"border-style:none;\">test</td></tr></thead></table>";
 // Close connection
 mysqli_close($link);
 ?>
