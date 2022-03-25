@@ -89,7 +89,7 @@ if($result_download_sessions = mysqli_query($link, $sql_download_sessions)){
                 echo "<tr>";
                 echo "<td>";
                 #Get only the url and not the filename;
-                echo $row_download_sessions['url']; 
+                echo $row_download_sessions['session']; 
                 echo "</td>";
                 echo "</tr>";
 
