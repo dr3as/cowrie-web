@@ -31,12 +31,11 @@ if($result_session_ip = mysqli_query($link, $sql_session_ip)){
     }
 }
         ##
-
+        echo "<br><br>";
+        echo "Commands executed in this session:<br>";
         $sql_session_commands = "SELECT input FROM input where session = \"$session\"";
 if($result_session_commands = mysqli_query($link, $sql_session_commands)){
     if(mysqli_num_rows($result_session_commands) > 0){
-        echo "<br><br>";
-        echo "Commands executed in this session:<br>";
         while($row_session_commands = mysqli_fetch_array($result_session_commands)){
             echo $row_session_commands['input'];
             echo "<br>";
@@ -44,7 +43,7 @@ if($result_session_commands = mysqli_query($link, $sql_session_commands)){
         // Free result set
         mysqli_free_result($result_session_commands);
     } else{
-        echo "No records matching your query were found.";
+        echo "No commands was executed in this session.";
     }
 } else{
     echo "ERROR: Could not able to execute $sql_session_commands. " . mysqli_error($link);
@@ -83,7 +82,7 @@ if($result_session_downloads = mysqli_query($link, $sql_session_downloads)){
         // Free result set
         mysqli_free_result($result_session_downloads);
     } else{
-        echo "No records matching your query were found.";
+        echo "No files was downloaded in this session.";
     }
 } else{
     echo "ERROR: Could not able to execute $sql_session_downloads. " . mysqli_error($link);
