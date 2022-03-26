@@ -10,7 +10,7 @@ if($result_sessions = mysqli_query($link, $sql_sessions)){
     if(mysqli_num_rows($result_sessions) > 0){
         echo "<table>";
             echo "<tr>";
-                #echo "<th>id</th>";
+                echo "<th>id</th>";
                 echo "<th>Starttime</th>";
                 echo "<th>Endtime</th>";
                 #echo "<th>Sensor</th>";
@@ -21,6 +21,7 @@ if($result_sessions = mysqli_query($link, $sql_sessions)){
         while($row_sessions = mysqli_fetch_array($result_sessions)){
             echo "<tr>";
                 #echo "<td>" . $row_sessions['id'] . "</td>";
+                echo "<td><a href=\"index.php?url=download&shasum=". $row_sessions['id'] ."\">" . $row_sessions['id'] . "</a></td>";
                 echo "<td>" . $row_sessions['starttime'] . "</td>";
                 echo "<td>" . $row_sessions['endtime'] . "</td>";
                 #echo "<td>" . $row_sessions['sensor'] . "</td>";
