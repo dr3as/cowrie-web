@@ -8,7 +8,21 @@ echo "</b><br>";
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
-
+$sql_session_ip = "SELECT ip FROM sessions where id = \"$session\"";
+if($result_session_ip = mysqli_query($link, $sql_session_ip)){
+    if(mysqli_num_rows($result_session_ip) > 0){
+        echo "IP: ";
+        while($row_session_ip = mysqli_fetch_array($result_session_ip)){
+            echo $row_session_ip['ip'];
+        }
+            // Free result set
+        mysqli_free_result($result_session_ip);
+    } else{
+        echo "No records matching your query were found.";
+    }
+} else{
+    echo "ERROR: Could not able to execute $sql_session_ip. " . mysqli_error($link);
+}
 // Attempt select query execution
 
 
