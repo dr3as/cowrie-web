@@ -15,7 +15,7 @@ if($result_session_ip = mysqli_query($link, $sql_session_ip)){
         while($row_session_ip = mysqli_fetch_array($result_session_ip)){
             echo $row_session_ip['ip'];
             echo "<br>Client: ";
-            $client = mysqli_query($link, "SELECT version from clients where id = \"$session\"$row_session_ip['client']");
+            $client = mysqli_query($link, "SELECT version from clients where id = \"$row_session_ip['client']\"");
             echo $row_session_ip['client'];
             echo $client;
         }
