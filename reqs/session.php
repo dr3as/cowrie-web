@@ -21,6 +21,8 @@ if($result_session_ip = mysqli_query($link, $sql_session_ip)){
                 echo $row_client_version['0'];
         }
         ##
+        echo "<br>";
+        echo "Commands executed in this session:<br>";
         $sql_session_commands = "SELECT input FROM input where session = \"$session\"";
 if($result_session_commands = mysqli_query($link, $sql_session_commands)){
     if(mysqli_num_rows($result_session_commands) > 0){
