@@ -46,7 +46,8 @@ if($result_session_commands = mysqli_query($link, $sql_session_commands)){
 if($result_session_downloads = mysqli_query($link, $sql_session_downloads)){
     if(mysqli_num_rows($result_session_downloads) > 0){
         while($row_session_downloads = mysqli_fetch_array($result_session_downloads)){
-            echo $row_session_downloads['url'];
+            echo "<td><a href=\"index.php?url=download&shasum=". $row_session_downloads['shasum'] ."\">" . echo $row_session_downloads['url']; . "</a></td>";
+            #echo $row_session_downloads['url'];
             echo "<br>";
         }
         // Free result set
