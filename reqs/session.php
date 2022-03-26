@@ -18,12 +18,16 @@ if($result_session_ip = mysqli_query($link, $sql_session_ip)){
             $clientid = $row_session_ip['client'];
             if($client = mysqli_query($link, "SELECT version from clients where id = \"$clientid\"")){
                 $row_client_version = mysqli_fetch_row($client);
+                
                 echo $row_client_version['0'];
         }
         echo "<br>";
         if($username_password = mysqli_query($link, "SELECT username, password from auth where session = \"$session\"")){
             while($row_session_username_password = mysqli_fetch_array($username_password)){
-               echo $row_session_username_password['username'];
+                echo "Username/Password: "
+                echo $row_session_username_password['username'];
+                echo "/";
+                echo $row_session_username_password['password'];
     }
 }
         ##
