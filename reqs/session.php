@@ -17,8 +17,9 @@ if($result_session_ip = mysqli_query($link, $sql_session_ip)){
             echo "<br>Client: ";
             $clientid = $row_session_ip['client'];
             if($client = mysqli_query($link, "SELECT version from clients where id = \"$clientid\"")){
+                $row_client_version = mysqli_fetch_row($client);
             echo $row_session_ip['client'];
-            echo mysqli_num_rows($client);
+            echo $row_client_version;
         }
         }
             // Free result set
