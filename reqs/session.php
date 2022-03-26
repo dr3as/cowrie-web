@@ -57,7 +57,8 @@ if($result_session_downloads = mysqli_query($link, $sql_session_downloads)){
             echo "<br>";
         }
         else{
-
+            echo $row_session_downloads['url'];
+            echo "<br>";
         }
         }
         // Free result set
