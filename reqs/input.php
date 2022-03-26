@@ -17,7 +17,8 @@ if($result_input = mysqli_query($link, $sql_input)){
             echo "</tr>";
         while($row_input = mysqli_fetch_array($result_input)){
             echo "<tr>";
-                echo "<td>" . $row_input['session'] . "</td>";
+                #echo "<td>" . $row_input['session'] . "</td>";
+                echo "<td><a href=\"index.php?url=session&session=". $row_input['session'] ."\">" . $row_input['session'] . "</a></td>";
                 echo "<td>" . $row_input['timestamp'] . "</td>";
                 echo "<td>" . $row_input['success'] . "</td>";
                 echo "<td>" . $row_input['input'] . "</td>";
