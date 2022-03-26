@@ -25,6 +25,7 @@ if($result_session_ip = mysqli_query($link, $sql_session_ip)){
             while($row_session_username_password = mysqli_fetch_array($client)){
                echo $row_session_username_password['username'];
     }
+}
         ##
         echo "<br><br>";
         echo "Commands executed in this session:<br>";
