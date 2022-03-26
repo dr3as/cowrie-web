@@ -61,7 +61,11 @@ if($result_session_downloads = mysqli_query($link, $sql_session_downloads)){
             echo "<br>";
         }
         else{
+            echo "<a href=\"index.php?url=download&shasum=";
             echo $row_session_downloads['shasum'];
+            echo "\">";
+            echo $row_session_downloads['shasum'];
+            echo "</a>";
             echo "<br>";
         }
         }
