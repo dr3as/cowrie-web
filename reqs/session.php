@@ -23,7 +23,7 @@ if($result_session_ip = mysqli_query($link, $sql_session_ip)){
         echo "<br>";
         if($username_password = mysqli_query($link, "SELECT username, password from auth where session = \"$session\"")){
             $row_session_username_password = mysqli_fetch_array($client);
-            echo $session_username_password['username'];
+            echo $row_session_username_password['username'];
     }
         ##
         echo "<br><br>";
