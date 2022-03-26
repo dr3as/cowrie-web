@@ -14,6 +14,8 @@ if($result_session_ip = mysqli_query($link, $sql_session_ip)){
         echo "IP: ";
         while($row_session_ip = mysqli_fetch_array($result_session_ip)){
             echo $row_session_ip['ip'];
+            echo "<br>";
+            echo $row_session_ip['client'];
         }
             // Free result set
         mysqli_free_result($result_session_ip);
@@ -24,8 +26,7 @@ if($result_session_ip = mysqli_query($link, $sql_session_ip)){
     echo "ERROR: Could not able to execute $sql_session_ip. " . mysqli_error($link);
 }
 // Attempt select query execution
-echo "<br>";
-echo $row_session_ip['client'];
+
 
 // Close connection
 mysqli_close($link);
