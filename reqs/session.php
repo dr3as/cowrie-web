@@ -38,7 +38,26 @@ if($result_session_commands = mysqli_query($link, $sql_session_commands)){
 } else{
     echo "ERROR: Could not able to execute $sql_session_commands. " . mysqli_error($link);
 }
-##
+####
+        ##
+        echo "<br><br>";
+        echo "Files downloaded in this session:<br>";
+        $sql_session_downloads = "SELECT url, shasum FROM downloads where session = \"$session\"";
+if($result_session_downloads = mysqli_query($link, $sql_session_downloads)){
+    if(mysqli_num_rows($result_session_downloads) > 0){
+        while($row_session_downloads = mysqli_fetch_array($result_session_downloads)){
+            echo $row_session_downloads['input'];
+            echo "<br>";
+        }
+        // Free result set
+        mysqli_free_result($result_session_downloads);
+    } else{
+        echo "No records matching your query were found.";
+    }
+} else{
+    echo "ERROR: Could not able to execute $sql_session_downloads. " . mysqli_error($link);
+}
+####
         }
             // Free result set
         mysqli_free_result($result_session_ip);
