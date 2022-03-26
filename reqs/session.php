@@ -8,7 +8,7 @@ echo "</b><br>";
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
-$sql_session_ip = "SELECT ip FROM sessions where id = \"$session\"";
+$sql_session_ip = "SELECT ip, client FROM sessions where id = \"$session\"";
 if($result_session_ip = mysqli_query($link, $sql_session_ip)){
     if(mysqli_num_rows($result_session_ip) > 0){
         echo "IP: ";
@@ -24,7 +24,8 @@ if($result_session_ip = mysqli_query($link, $sql_session_ip)){
     echo "ERROR: Could not able to execute $sql_session_ip. " . mysqli_error($link);
 }
 // Attempt select query execution
-
+echo "<br>";
+echo $row_session_ip['client'];
 
 // Close connection
 mysqli_close($link);
