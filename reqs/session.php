@@ -31,22 +31,25 @@ if($result_session_ip = mysqli_query($link, $sql_session_ip)){
     }
 }
         ##
-        echo "<br><br>";
-        echo "Commands executed in this session:<br>";
-        $sql_session_commands = "SELECT input FROM input where session = \"$session\"";
-if($result_session_commands = mysqli_query($link, $sql_session_commands)){
-    if(mysqli_num_rows($result_session_commands) > 0){
-        while($row_session_commands = mysqli_fetch_array($result_session_commands)){
-            echo $row_session_commands['input'];
+        echo "<br>";
+        echo "Timeinfo:<br>";
+        $sql_session_time = "SELECT starttime, endtime FROM sessions where session = \"$session\"";
+if($result_session_time = mysqli_query($link, $sql_session_time)){
+    if(mysqli_num_rows($result_session_time) > 0){
+        while($row_session_time = mysqli_fetch_array($result_session_time)){
+            echo $row_session_time['starttime'];
+            echo " ";
+            echo $row_session_time['endtime'];
+            
             echo "<br>";
         }
         // Free result set
-        mysqli_free_result($result_session_commands);
+        mysqli_free_result($result_session_time);
     } else{
         echo "No commands was executed in this session.";
     }
 } else{
-    echo "ERROR: Could not able to execute $sql_session_commands. " . mysqli_error($link);
+    echo "ERROR: Could not able to execute $sql_session_time. " . mysqli_error($link);
 }
         ##
         echo "<br><br>";
