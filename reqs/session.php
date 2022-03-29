@@ -33,14 +33,14 @@ if($result_session_ip = mysqli_query($link, $sql_session_ip)){
         ##
         echo "<br>";
         echo "Timeinfo:<br>";
-        $sql_session_time = "SELECT starttime, endtime FROM sessions where session = \"$session\"";
+        $sql_session_time = "SELECT starttime, endtime FROM sessions where id = \"$session\"";
 if($result_session_time = mysqli_query($link, $sql_session_time)){
     if(mysqli_num_rows($result_session_time) > 0){
         while($row_session_time = mysqli_fetch_array($result_session_time)){
             echo $row_session_time['starttime'];
             echo " ";
             echo $row_session_time['endtime'];
-            
+
             echo "<br>";
         }
         // Free result set
