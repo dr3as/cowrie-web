@@ -37,9 +37,11 @@ if($result_session_ip = mysqli_query($link, $sql_session_ip)){
 if($result_session_time = mysqli_query($link, $sql_session_time)){
     if(mysqli_num_rows($result_session_time) > 0){
         while($row_session_time = mysqli_fetch_array($result_session_time)){
+            echo "<br>Starttime:";
             echo $row_session_time['starttime'];
-            echo " ";
+            echo "<br>Endtime:";
             echo $row_session_time['endtime'];
+            echo "<br>Length:";
 
             echo "<br>";
         }
