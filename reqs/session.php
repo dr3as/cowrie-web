@@ -31,8 +31,7 @@ if($result_session_ip = mysqli_query($link, $sql_session_ip)){
     }
 }
         ##
-        echo "<br>";
-        echo "Timeinfo:<br>";
+        
         $sql_session_time = "SELECT starttime, endtime FROM sessions where id = \"$session\"";
 if($result_session_time = mysqli_query($link, $sql_session_time)){
     if(mysqli_num_rows($result_session_time) > 0){
