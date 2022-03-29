@@ -40,8 +40,11 @@ if($result_session_time = mysqli_query($link, $sql_session_time)){
             echo $row_session_time['starttime'];
             echo "<br>Endtime:";
             echo $row_session_time['endtime'];
+            $dteStart = new DateTime($row_session_time['starttime']);
+            $dteEnd   = new DateTime($row_session_time['endtime']);
+            $dteDiff  = $dteStart->diff($dteEnd);  
             echo "<br>Length:";
-
+            print $dteDiff->format("%H:%I:%S"); 
             echo "<br>";
         }
         // Free result set
