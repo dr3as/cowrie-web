@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Cowrie Logs</title>
+<title>Cowrie Web</title>
 <style type="text/css">
 <?php
 error_reporting(E_ALL);
